@@ -1,15 +1,18 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DisplayDataComponent } from '../display-data/display-data.component';
+import { DisplayDataComponent } from '../../display-data.component';
+import { ItemData } from './interface/edit-dialog-interface';
 
 // Interface created to specify data type to be used with MAT_DIALOG_DATA inside the constructor
-export interface ItemData {
-  id: string;
-  userId: string;
-  title: string;
-  body: string;
-}
+
+
+// export interface ItemData {
+//   id: string;
+//   userId: string;
+//   title: string;
+//   body: string;
+// }
 
 @Component({
   selector: 'app-edit-dialog',
@@ -23,7 +26,7 @@ export class EditDialogComponent implements OnInit {
   title: string = '';
   body: string = '';
 
-  constructor(public dialogRef: MatDialogRef<DisplayDataComponent>,
+  constructor(public dialogRef: MatDialogRef<DisplayDataComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: ItemData,
     public router: Router) { }
 

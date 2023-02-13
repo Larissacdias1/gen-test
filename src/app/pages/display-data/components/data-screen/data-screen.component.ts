@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DataScreenComponent implements OnInit {
 
+
   // Recieving data from EditDialog component
   itemDataId = this.route.snapshot.paramMap.get('itemDataId');
   itemDataUserId = this.route.snapshot.paramMap.get('itemDataUserId');

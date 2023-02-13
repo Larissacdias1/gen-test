@@ -8,11 +8,19 @@
 </mat-toolbar>
 
 <mat-drawer-container>
-    <mat-drawer opened="false" mode="over" #sideMenu class="sideMenu">
+    <!-- <mat-drawer opened="false" mode="over" #sideMenu class="sideMenu">
         <mat-list>
             <mat-list-item class="whiteText" [routerLink]="['/welcome-page']" routerLinkActive="active" (click)="sideMenuToggle(sideMenu)" >Welcome page</mat-list-item>
             <mat-list-item class="whiteText" [routerLink]="['/display-data']" routerLinkActive="active" (click)="sideMenuToggle(sideMenu)">Posts page</mat-list-item>
             <mat-list-item class="whiteText" [routerLink]="['/thanks-page']" routerLinkActive="active" (click)="sideMenuToggle(sideMenu)">Thanks page</mat-list-item>
+        </mat-list>
+    </mat-drawer> -->
+
+    <mat-drawer opened="false" mode="over" #sideMenu class="sideMenu">
+        <mat-list  *ngFor="let item of routesLinks" >
+            <mat-list-item class="whiteText" [routerLink]="item.route" routerLinkActive="active" (click)="sideMenuToggle(sideMenu)">
+                {{item.title}}
+            </mat-list-item>
         </mat-list>
     </mat-drawer>
     <mat-drawer-content>

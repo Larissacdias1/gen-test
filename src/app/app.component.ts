@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoutesInterface } from './core/interfaces/router-interface';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,20 @@ export class AppComponent {
   sideMenuToggle(menu:any){
     menu.toggle();
   }
+
+  public routesLinks: Array<RoutesInterface> = [
+    {
+      title: 'Welcome page',
+      route: '/welcome-page',
+    },
+    {
+      title: 'Posts page',
+      route: '/display-data',
+    },
+    {
+      title: 'Thanks page',
+      route: '/thanks-page',
+    },
+  ]
 }
 

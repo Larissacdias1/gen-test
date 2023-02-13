@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { GetDataService } from 'services/get-data.service';
-import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { GetDataService } from 'src/app/core/services/get-data.service'; 
+import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component'; 
 
 @Component({
   selector: 'app-display-data',
@@ -11,7 +11,7 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 })
 export class DisplayDataComponent implements OnInit {
 
-  constructor(
+ constructor(
     public dataService: GetDataService,
     private dialog: MatDialog,
     private route: ActivatedRoute) { }
@@ -28,11 +28,10 @@ export class DisplayDataComponent implements OnInit {
     
   }
 
+  // Data flow: GetData Service -> DisplayData Component -> EditDialog Component -> DataScreen Component.
+  // This data object send the clicked card data to the next component via MatDialog object 
   openEditDialog(itemData: any){
-    // Data flow: GetData Service -> DisplayData Component -> EditDialog Component -> DataScreen Component.
-    // This data object send the clicked card data to the next component via MatDialog object 
     this.dialog.open(EditDialogComponent, {data: {userId: itemData.userId, id: itemData.id, title: itemData.title, body: itemData.body}});
-    
   }
 
   showPostsData(){
@@ -44,7 +43,7 @@ export class DisplayDataComponent implements OnInit {
           post.body = this.newBody;
         }
       });
-    });
-    }
+    });  
+  }
 
 }
