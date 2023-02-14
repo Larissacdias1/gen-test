@@ -47,6 +47,6 @@ export class EditPostComponent implements OnInit {
     this.router.navigate(["post-page/post-list"], {
       state: { editedPost: this.form.getRawValue() },
     });
-    this.snackBar.open("Success", "", { duration: 5000 });
+    this.snackBar.open("Success", "", { duration: 3000 });
   }
 }
