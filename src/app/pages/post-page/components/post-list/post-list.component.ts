@@ -40,7 +40,7 @@ export class PostListComponent implements OnInit {
       });
   }
 
-  public getData() {
+  public getData(): void {
     this.dataService.getPostsData().subscribe((postsData) => {
       const editedPost = (
         this.location.getState() as { navigationId: number; editedPost: Post }

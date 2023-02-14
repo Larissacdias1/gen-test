@@ -36,11 +36,11 @@ export class EditPostComponent implements OnInit {
     this.form.patchValue(this.post);
   }
 
-  public revertChanges() {
+  public revertChanges(): void {
     this.form.patchValue(this.post);
   }
 
-  applyChanges() {
+  applyChanges(): void {
     this.router.navigate(["post-page/post-list"], {
       state: { editedPost: this.form.getRawValue() },
     });
