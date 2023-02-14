@@ -4,6 +4,8 @@ import { Router } from "@angular/router";
 import { Post } from "src/app/core/interfaces/post-interface";
 import { Location } from "@angular/common";
 
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 @Component({
   selector: "app-edit-post",
   templateUrl: "./edit-post.component.html",
@@ -22,7 +24,8 @@ export class EditPostComponent implements OnInit {
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private location: Location
+    private location: Location,
+    private snackBar: MatSnackBar
   ) {}
 
   public ngOnInit(): void {
@@ -44,5 +47,6 @@ export class EditPostComponent implements OnInit {
     this.router.navigate(["post-page/post-list"], {
       state: { editedPost: this.form.getRawValue() },
     });
+    this.snackBar.open("Success", "", { duration: 5000 });
   }
 }
