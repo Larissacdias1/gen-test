@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataScreenComponent } from './data-screen.component';
+import { ConfirmEditDialog } from './confirm-edit-dialog.component';
 
-describe('DataScreenComponent', () => {
-  let component: DataScreenComponent;
-  let fixture: ComponentFixture<DataScreenComponent>;
+describe('EditDialogComponent', () => {
+  let component: ConfirmEditDialog;
+  let fixture: ComponentFixture<ConfirmEditDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataScreenComponent ]
+      declarations: [ ConfirmEditDialog ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataScreenComponent);
+    fixture = TestBed.createComponent(ConfirmEditDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

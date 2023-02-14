@@ -1,0 +1,20 @@
+<ng-container *ngIf="postsDataFromUrl">
+  <mat-list class="listMargins">
+    <mat-list-item *ngFor="let item of postsDataFromUrl" class="cardMargin">
+      <mat-card>
+        <mat-card-title> Title: {{ item.title }} </mat-card-title>
+        <mat-card-content>
+          <div class="cardContentAlign">
+            <button
+              mat-raised-button
+              (click)="openEditDialog(item)"
+              class="btnAlign"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
